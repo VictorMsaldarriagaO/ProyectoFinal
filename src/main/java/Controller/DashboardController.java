@@ -16,7 +16,7 @@ public class DashboardController {
     @FXML
     protected void onRegisterClientButtonClick() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ClientRegistration-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/ClientRegistration-view.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("Panel de Control");
