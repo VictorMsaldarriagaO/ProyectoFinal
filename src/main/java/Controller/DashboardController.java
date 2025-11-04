@@ -19,8 +19,8 @@ public class DashboardController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/ClientRegistration-view.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
-            stage.setTitle("Panel de Control");
-            stage.setScene(new Scene(root, 600, 800));
+            stage.setTitle("Registro de Cliente"); // Título más descriptivo
+            stage.setScene(new Scene(root, 600, 450)); // Tamaño ajustado
             stage.show();
 
             welcomeText.setText("Abriendo formulario de registro...");
@@ -33,7 +33,21 @@ public class DashboardController {
 
     @FXML
     protected void onViewClientsButtonClick() {
-        welcomeText.setText("Función para ver clientes no implementada aún.");
+        try {
+            // Cargar la nueva vista de clientes
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/Clients-view.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Clientes y Cuentas");
+            stage.setScene(new Scene(root, 800, 500)); // Tamaño para la tabla
+            stage.show();
+
+            welcomeText.setText("Abriendo listado de clientes.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            welcomeText.setText("Error al cargar la vista de clientes.");
+        }
     }
 
     @FXML

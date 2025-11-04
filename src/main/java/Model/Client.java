@@ -6,6 +6,7 @@ public class Client {
     private String age;
     private String mail;
     private String phone;
+    private Account account;
 
     public Client(String name, String age, String id, String mail,String phone) {
         this.name = name;
@@ -13,15 +14,16 @@ public class Client {
         this.age = age;
         this.mail =mail;
         this.phone = phone;
+        this.account = null;
     }
 
     public String getName() { return name; }
 
     public void setName() { this.name=name;}
 
-    public String getidentification() { return id; }
+    public String getId() { return id; }
 
-    public void setIdentification() { this.id=id; }
+    public void setId() { this.id=id; }
 
     public String getAge() { return age; }
 
@@ -35,11 +37,16 @@ public class Client {
 
     public void setPhone() { this.phone=phone; }
 
+    public Account getAccount() { return account; }
+
+    public void setAccount(Account account) { this.account = account; }
+
     @Override
     public String toString() {
-        return "Nombre='" + name + '\'' +  ", Documento='" + id + '\'' +
+        return "Nombre='" + name + '\'' +  ", Id='" + id + '\'' +
                 ", Edad='" + age + '\'' + ", Correo='" + mail + '\'' +
-                ", Telefono='" + phone + '\'' + '}';
+                ", Telefono='" + phone + '\'' +
+                (account != null ? ", Cuenta='" + account.getnumAccount() + "'" : "") + '}';
    }
 
 }
