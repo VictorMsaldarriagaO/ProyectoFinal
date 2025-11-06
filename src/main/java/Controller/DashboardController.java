@@ -19,8 +19,8 @@ public class DashboardController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/ClientRegistration-view.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
-            stage.setTitle("Registro de Cliente"); // Título más descriptivo
-            stage.setScene(new Scene(root, 600, 450)); // Tamaño ajustado
+            stage.setTitle("Registro de Cliente");
+            stage.setScene(new Scene(root, 600, 450));
             stage.show();
 
             welcomeText.setText("Abriendo formulario de registro...");
@@ -34,7 +34,6 @@ public class DashboardController {
     @FXML
     protected void onViewClientsButtonClick() {
         try {
-            // Cargar la nueva vista de clientes
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/Clients-view.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();

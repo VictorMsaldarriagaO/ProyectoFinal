@@ -35,7 +35,7 @@ public class ViewClientsControler implements Initializable {
     private TableColumn<Client, String> accountColumn;
 
     private static ObservableList<Client> clientListStatic = FXCollections.observableArrayList();
-    private ObservableList<Client> clientList =clientListStatic;
+    private ObservableList<Client> clientList = clientListStatic;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -52,6 +52,7 @@ public class ViewClientsControler implements Initializable {
         accountColumn.setCellValueFactory(cellData -> {
             Client client = cellData.getValue();
             if (client.getAccount() != null) {
+                // Asume que Account tiene un getNumAccount() que devuelve String
                 return new SimpleStringProperty(client.getAccount().getnumAccount());
             } else {
                 return new SimpleStringProperty("N/A");
@@ -67,8 +68,8 @@ public class ViewClientsControler implements Initializable {
 
     private void loadDummyData() {
 
-        Client client1 = new Client("Ana Perez", "21", "1032988652", "ana.perez@mail.com", "3204387063");
-        Client client2 = new Client("Juan Lopez", "22", "1032688787", "juan.lopez@mail.com", "3218917298");
+        Client client1 = new Client("Ana Perez", 21, "1032988652", "ana.perez@mail.com", "3204387063");
+        Client client2 = new Client("Juan Lopez", 22, "1032688787", "juan.lopez@mail.com", "3218917298");
 
         Account acc1 = new Account("C-1001", client1);
         acc1.deposited(800000);

@@ -3,12 +3,12 @@ package Model;
 public class Client {
     private String name;
     private String id;
-    private String age;
+    private Integer age;
     private String mail;
     private String phone;
     private Account account;
 
-    public Client(String name, String age, String id, String mail,String phone) {
+    public Client(String name, Integer age, String id, String mail,String phone) {
         this.name = name;
         this.id= id;
         this.age = age;
@@ -25,7 +25,7 @@ public class Client {
 
     public void setId() { this.id=id; }
 
-    public String getAge() { return age; }
+    public int getAge() { return age; }
 
     public void setAge() { this.age=age; }
 
