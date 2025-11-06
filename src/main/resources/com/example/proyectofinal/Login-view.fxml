@@ -26,15 +26,19 @@
         </font>
     </Text>
 
-    <Label text="Usuario:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-    <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label text="Usuario:" GridPane.columnIndex="0" GridPane.rowIndex="1"
+           style="-fx-text-fill: #34495e; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+    <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="1"
+               style="-fx-font-size: 14px; -fx-padding: 8;" promptText="Ingrese su nombre de usuario"/>
 
-    <Label text="Contraseña:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <Label text="Contraseña:" GridPane.columnIndex="0" GridPane.rowIndex="2"
+           style="-fx-text-fill: #34495e; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2"
+                   style="-fx-font-size: 14px; -fx-padding: 8;" promptText="Ingrese su contraseña"/>
 
     <Label fx:id="messageLabel" text="" style="-fx-text-fill: red;" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
 
-    <Button text="Iniciar Sesión" onAction="#handleLoginButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.halignment="RIGHT"/>
+    <Button text="Iniciar Sesión" onAction="#handleLoginButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.halignment="RIGHT" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-cursor: hand; -fx-background-radius: 5;"/>
 
     <columnConstraints>
         <ColumnConstraints minWidth="100" prefWidth="100"/>
