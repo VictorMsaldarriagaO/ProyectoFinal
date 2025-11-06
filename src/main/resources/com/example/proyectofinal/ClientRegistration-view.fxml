@@ -4,61 +4,91 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Controller.ClientRegistrationController"
-            prefHeight="350.0" prefWidth="600.0">
+<VBox
+        xmlns="http://javafx.com/javafx/21"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="Controller.ClientRegistrationController"
+        prefHeight="350.0" prefWidth="600.0"
+        alignment="TOP_CENTER"
+        spacing="20.0">
+    <padding>
+        <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+    </padding>
+
     <children>
-        <GridPane alignment="CENTER" hgap="10.0" prefHeight="350.0" prefWidth="600.0" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <columnConstraints>
-                <ColumnConstraints halignment="RIGHT"
-                                   hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            </rowConstraints>
+
+        <Label text="Formulario de Registro de Cliente">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="10.0" />
+            </VBox.margin>
+        </Label>
+        <VBox spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
             <padding>
-                <Insets bottom="40.0" left="20.0" right="40.0" top="20.0" />
+                <Insets top="30" right="30" bottom="30" left="30"/>
             </padding>
-            <Label text="Formulario de Registro de Cliente"
-                   GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER">
-                <font>
-                    <Font name="System Bold" size="18.0" />
-                </font>
-            </Label>
 
-            <Label text="Nombre:" GridPane.rowIndex="1" />
-            <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <GridPane hgap="15" vgap="20">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" hgrow="NEVER" />
 
-            <Label text="Edad:" GridPane.rowIndex="2" />
-            <TextField fx:id="ageField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
 
-            <Label text="Documento (ID):" GridPane.rowIndex="3" />
-            <TextField fx:id="idField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <children>
+                    <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                           style="-fx-text-fill: #34495e; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    <TextField fx:id="nameField"  GridPane.columnIndex="1" GridPane.rowIndex="0"
+                               style="-fx-font-size: 14px; -fx-padding: 8;" promptText="Ingrese el nombre del usuario"/>
 
-            <Label text="Correo:" GridPane.rowIndex="4" />
-            <TextField fx:id="mailField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    <Label text="Edad:" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                           style="-fx-text-fill: #34495e; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    <TextField fx:id="ageField"  GridPane.columnIndex="1" GridPane.rowIndex="1"
+                               style="-fx-font-size: 14px; -fx-padding: 8;" promptText="Ingrese la edad del usuario"/>
 
-            <Label text="Teléfono:" GridPane.rowIndex="5" />
-            <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                    <Label text="Documento (ID):" GridPane.columnIndex="0" GridPane.rowIndex="2"
+                           style="-fx-text-fill: #34495e; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    <TextField fx:id="idField"  GridPane.columnIndex="1" GridPane.rowIndex="2"
+                               style="-fx-font-size: 14px; -fx-padding: 8;" promptText="Ingrese el documento del usuario"/>
 
-            <Button onAction="#onGoBackButtonClick" text="Regresar al Dashboard" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="6" />
+                    <Label text="Correo:" GridPane.columnIndex="0" GridPane.rowIndex="3"
+                           style="-fx-text-fill: #34495e; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    <TextField fx:id="mailField"  GridPane.columnIndex="1" GridPane.rowIndex="3"
+                               style="-fx-font-size: 14px; -fx-padding: 8;" promptText="Ingrese el correo del usuario"/>
 
-            <Button onAction="#onRegisterButtonClick" text="Registrar Cliente" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+                    <Label text="Teléfono:" GridPane.columnIndex="0" GridPane.rowIndex="4"
+                           style="-fx-text-fill: #34495e; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    <TextField fx:id="phoneField"  GridPane.columnIndex="1" GridPane.rowIndex="4"
+                               style="-fx-font-size: 14px; -fx-padding: 8;" promptText="Ingrese el telefono del usuario"/>
+                </children>
+            </GridPane>
 
-        </GridPane>
+            <HBox alignment="BOTTOM_RIGHT" spacing="10.0">
+                <children>
+                    <Button onAction="#onGoBackButtonClick" text="Regresar al Dashboard" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-cursor: hand; -fx-background-radius: 5;"/>
+
+                    <Button onAction="#onRegisterButtonClick" text="Registrar Cliente" defaultButton="true" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-cursor: hand; -fx-background-radius: 5;"/>
+                </children>
+                <VBox.margin>
+                    <Insets top="20.0" />
+                </VBox.margin>
+            </HBox>
+        </VBox>
     </children>
-</AnchorPane>
+</VBox>
