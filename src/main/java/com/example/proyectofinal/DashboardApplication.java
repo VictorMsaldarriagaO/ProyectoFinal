@@ -12,11 +12,11 @@ public class DashboardApplication extends Application {
     public void start(Stage stage) throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
-                DashboardApplication.class.getResource("Login-view.fxml") );
+                DashboardApplication.class.getResource("Main-view.fxml") );
 
                 Scene scene = new Scene(fxmlLoader.load(), 600, 400);
 
-                stage.setTitle("Inicio de Sesión");
+                stage.setTitle("Bienvenido al Banco");
                 stage.setScene(scene);
                 stage.show();
     }

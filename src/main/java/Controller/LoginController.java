@@ -43,6 +43,26 @@ public class LoginController {
         }
     }
 
+    @FXML
+    protected void handleBackButtonAction(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/Main-view.fxml"));
+
+            Parent root = loader.load();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Bienvenido al Banco");
+            stage.setWidth(600);
+            stage.setHeight(400);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            messageLabel.setText("Error al cargar el menú principal.");
+        }
+    }
+
     private void loadDashboard(ActionEvent event) {
         try {
 

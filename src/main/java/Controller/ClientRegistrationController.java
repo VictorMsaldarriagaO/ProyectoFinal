@@ -3,11 +3,17 @@ package Controller;
 import Model.Client;
 import Model.Account;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class ClientRegistrationController {
 
@@ -21,6 +27,9 @@ public class ClientRegistrationController {
     private TextField mailField;
     @FXML
     private TextField phoneField;
+    @FXML
+    private Label welcomeText;
+
 
     private void showAlert(String title, String content) {
         Alert errorAlert = new Alert(Alert.AlertType.ERROR);
@@ -103,8 +112,20 @@ public class ClientRegistrationController {
 
     @FXML
     protected void onGoBackButtonClick(ActionEvent event) {
-        Node source = (Node) event.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/Dashboard-view.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setWidth(800);
+            stage.setHeight(600);
+            stage.show();
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            welcomeText.setText("Error al cargar la vista de registro.");
+        }
     }
 }

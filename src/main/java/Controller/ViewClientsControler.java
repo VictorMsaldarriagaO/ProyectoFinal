@@ -6,7 +6,11 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -14,6 +18,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -33,6 +38,8 @@ public class ViewClientsControler implements Initializable {
     private TableColumn<Client, String> phoneColumn;
     @FXML
     private TableColumn<Client, String> accountColumn;
+    @FXML
+    private Label welcomeText;
 
     private static ObservableList<Client> clientListStatic = FXCollections.observableArrayList();
     private ObservableList<Client> clientList = clientListStatic;
@@ -52,7 +59,6 @@ public class ViewClientsControler implements Initializable {
         accountColumn.setCellValueFactory(cellData -> {
             Client client = cellData.getValue();
             if (client.getAccount() != null) {
-                // Asume que Account tiene un getNumAccount() que devuelve String
                 return new SimpleStringProperty(client.getAccount().getnumAccount());
             } else {
                 return new SimpleStringProperty("N/A");
@@ -86,8 +92,19 @@ public class ViewClientsControler implements Initializable {
 
     @FXML
     protected void onGoBackButtonClick(ActionEvent event) {
-        Node source = (Node) event.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/Dashboard-view.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setWidth(800);
+            stage.setHeight(600);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            welcomeText.setText("Error al cargar la vista de registro.");
+        }
     }
 }

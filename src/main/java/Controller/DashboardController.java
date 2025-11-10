@@ -1,7 +1,9 @@
 package Controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -12,45 +14,68 @@ import java.io.IOException;
 public class DashboardController {
     @FXML
     private Label welcomeText;
+    @FXML
+    private Label messageLabel;
 
     @FXML
-    protected void onRegisterClientButtonClick() {
+    protected void onRegisterClientButtonClick(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/ClientRegistration-view.fxml"));
-            Parent root = fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Registro de Cliente");
-            stage.setScene(new Scene(root, 600, 450));
-            stage.show();
-
             welcomeText.setText("Abriendo formulario de registro...");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/ClientRegistration-view.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Registro de Cliente");
+            stage.setWidth(600);
+            stage.setHeight(450);
+            stage.show();
 
         } catch (IOException e) {
             e.printStackTrace();
             welcomeText.setText("Error al cargar la vista de registro.");
         }
+
     }
-
     @FXML
-    protected void onViewClientsButtonClick() {
+    protected void onViewClientsButtonClick(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/Clients-view.fxml"));
-            Parent root = fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Clientes y Cuentas");
-            stage.setScene(new Scene(root, 800, 500)); // Tamaño para la tabla
-            stage.show();
-
             welcomeText.setText("Abriendo listado de clientes.");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/Clients-view.fxml"));
+
+            Parent root = loader.load();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Clientes y Cuentas");
+            stage.setWidth(800);
+            stage.setHeight(500);
+            stage.show();
 
         } catch (IOException e) {
             e.printStackTrace();
-            welcomeText.setText("Error al cargar la vista de clientes.");
+            welcomeText.setText("Error al cargar la vista de usuarios.");
         }
     }
 
     @FXML
-    protected void onLoanManagementButtonClick() {
-        welcomeText.setText("Función para gestión de préstamos no implementada aún.");
+    protected void onOpenATMButtonClick(ActionEvent event) {
+        try {
+            welcomeText.setText("Abriendo Panel de Control del ATM...");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/ATM-view.fxml"));
+
+            Parent root = loader.load();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Servicios Bancarios");
+            stage.setWidth(800);
+            stage.setHeight(600);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            welcomeText.setText("Error al cargar la vista del ATM.");
+        }
     }
 }
