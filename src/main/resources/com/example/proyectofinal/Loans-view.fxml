@@ -18,9 +18,8 @@
                 <Font size="24.0" />
             </font>
         </Label>
-        <Label fx:id="lblPrestamoActual" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #e67e22;" text="Monto Pendiente: $5,000.00" />
-        <TextField fx:id="txtMontoAbono" promptText="Monto a abonar" />
-        <Button fx:id="btnAbonar" onAction="#handleAbono" prefWidth="200.0" style="-fx-background-color: #f1c40f; -fx-text-fill: #34495e;" text="Realizar Abono" />
-        <Label fx:id="lblAbonoStatus" text="" />
+        <Label fx:id="lblPrestamoActual" style="-fx-font-size: 18px; -fx-text-fill: #2c3e50;" text="Préstamo actual: $10.000 (Pendiente: $2.000)" />
+        <TextField fx:id="txtAbono" promptText="Ingrese el valor a abonar" style="-fx-font-size: 16px; -fx-padding: 10; -fx-background-radius: 5; -fx-border-color: #bdc3c7; -fx-border-radius: 5;" />
+        <Button onAction="#handleAbono" prefWidth="200.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-cursor: hand; -fx-background-radius: 5;" text="Realizar Abono" />
     </VBox>
 </AnchorPane>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SelectionController">
+    <Text layoutX="146.0" layoutY="63.0" text="Seleccione su metodo de ingreso" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font>
+    </Text>
+    <VBox alignment="CENTER" layoutX="68.0" layoutY="89.0" prefHeight="256.0" prefWidth="486.0" spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+        <padding>
+            <Insets bottom="30"
+                    left="20" right="30" top="20" />
+        </padding>
+
+        <children>
+
+            <Text text="Elija una de las opciones:" textAlignment="CENTER" wrappingWidth="264.0686583518982">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Text>
+            <Button fx:id="btnUsuario" layoutX="329.0" layoutY="159.0" onAction="#showUser" prefWidth="250.0" style="-fx-background-color: #3498db;
+ -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-cursor: hand; -fx-background-radius: 5;" text="Soy un usuario" />
+            <Button fx:id="btnAdministrador" layoutX="21.0" layoutY="159.0" onAction="#showAdministrator" prefWidth="250.0" style="-fx-background-color: #3498db;
+ -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-cursor: hand; -fx-background-radius: 5;" text="Soy un administrador">
+                <Button alignment="CENTER" contentDisplay="CENTER" onAction="#showSalir" prefHeight="26.0" prefWidth="242.0" style="-fx-background-color: #e74c3c;
+ -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 25; -fx-cursor: hand; -fx-background-radius: 5;"
+                        text="Regresar" textAlignment="CENTER" />
+            </Button>
+        </children>
+    </VBox>
+</AnchorPane>

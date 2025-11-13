@@ -26,14 +26,14 @@
             <Button fx:id="cuentaBtn" maxWidth="1.7976931348623157E308" onAction="#showCuenta" text="Cuenta" />
             <Button fx:id="transferenciasBtn" maxWidth="1.7976931348623157E308" onAction="#showTransferencias" text="Transferencias" />
             <Button fx:id="prestamosBtn" maxWidth="1.7976931348623157E308" onAction="#showPrestamos" text="Préstamos" />
-            <Button fx:id="deudaBtn" maxWidth="1.7976931348623157E308" onAction="#showDeuda" text="Deuda financiera" />
+            <Button fx:id="deudaBtn" maxWidth="1.7976931348623157E308" onAction="#showDeuda" text="Deuda Financiera" />
             <Button fx:id="movimientosBtn" maxWidth="1.7976931348623157E308" onAction="#showMovimientos" text="Movimientos recientes" />
 
             <VBox.margin>
                 <Insets top="30.0" />
             </VBox.margin>
 
-            <Button fx:id="backToDashboardBtn" maxWidth="1.7976931348623157E308" onAction="#onBackToDashboardButtonClick" text="← Volver al Dashboard" style="-fx-background-color: #e74c3c; -fx-text-fill: white;">
+            <Button fx:id="backToDashboardBtn" maxWidth="1.7976931348623157E308" onAction="#onBackToDashboardButtonClick" text="← Cerrar sesión" style="-fx-background-color: #e74c3c; -fx-text-fill: white;">
                 <VBox.margin>
                     <Insets top="40.0" />
                 </VBox.margin>
@@ -54,13 +54,6 @@
         </StackPane>
     </center>
     <bottom>
-        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="© 2025 ATM Services" BorderPane.alignment="CENTER" style="-fx-background-color: #ecf0f1;">
-            <padding>
-                <Insets bottom="5.0" top="5.0" />
-            </padding>
-            <font>
-                <Font size="10.0" />
-            </font>
-        </Label>
+        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="© 2024 Banco. Todos los derechos reservados." style="-fx-background-color: #ecf0f1; -fx-padding: 5;" BorderPane.alignment="CENTER" />
     </bottom>
 </BorderPane>

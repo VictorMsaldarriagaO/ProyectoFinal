@@ -57,25 +57,47 @@ public class DashboardController {
             welcomeText.setText("Error al cargar la vista de usuarios.");
         }
     }
-
     @FXML
-    protected void onOpenATMButtonClick(ActionEvent event) {
+    protected void onViewATMButtonClick(ActionEvent event) {
+        System.out.println("aun no implementado");
         try {
-            welcomeText.setText("Abriendo Panel de Control del ATM...");
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/ATM-view.fxml"));
+            welcomeText.setText("Abriendo Gestión ATM.");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/ManagementATM-view.fxml"));
 
             Parent root = loader.load();
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
-            stage.setTitle("Servicios Bancarios");
+            stage.setTitle("Gestión Bancaria");
             stage.setWidth(800);
-            stage.setHeight(600);
+            stage.setHeight(500);
             stage.show();
 
         } catch (IOException e) {
             e.printStackTrace();
-            welcomeText.setText("Error al cargar la vista del ATM.");
+            welcomeText.setText("Error al cargar la vista de usuarios.");
+        }
+
+    }
+
+    @FXML
+    protected void onCerrarSesion(ActionEvent event) {
+        try {
+            welcomeText.setText("Cerrando sesion.");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/Login-view.fxml"));
+
+            Parent root = loader.load();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Clientes y Cuentas");
+            stage.setWidth(800);
+            stage.setHeight(500);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            welcomeText.setText("Error al cargar la vista de usuarios.");
         }
     }
 }

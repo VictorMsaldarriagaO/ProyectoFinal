@@ -19,10 +19,8 @@
                 <Font size="24.0" />
             </font>
         </Label>
-        <TextField fx:id="txtCuentaDestino" promptText="Número de cuenta destino" />
-        <TextField fx:id="txtMonto" promptText="Monto a transferir (valor)" />
-        <Button fx:id="btnTransferir" onAction="#handleTransfer" prefWidth="200.0" style="-fx-background-color: #2980b9; -fx-text-fill: white;"
-                text="Confirmar Transferencia" />
-        <Label fx:id="lblStatus" text="" />
+        <TextField fx:id="txtCuentaDestino" promptText="Número de cuenta destino" style="-fx-font-size: 16px; -fx-padding: 10; -fx-background-radius: 5; -fx-border-color: #bdc3c7; -fx-border-radius: 5;"/>
+        <TextField fx:id="txtMonto" promptText="Monto a transferir" style="-fx-font-size: 16px; -fx-padding: 10; -fx-background-radius: 5; -fx-border-color: #bdc3c7; -fx-border-radius: 5;"/>
+        <Button onAction="#handleTransfer" prefWidth="200.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-cursor: hand; -fx-background-radius: 5;" text="Confirmar Transferencia" />
     </VBox>
 </AnchorPane>

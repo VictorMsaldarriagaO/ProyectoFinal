@@ -49,42 +49,22 @@ public class ClientRegistrationController {
 
         if (name.isEmpty() || ageStr.isEmpty() || id.isEmpty()
                 || mail.isEmpty() || phone.isEmpty()) {
-            showAlert("Error de Validación", "Por favor, complete todos los campos para registrar al cliente.");
-            return;
-        }
-
-        if (!name.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\\s]+")) {
-            showAlert("Error de Formato", "El campo Nombre solo debe contener letras.");
+            showAlert("Error de Validación", "Por favor, complete todos los campos para registrar un cliente.");
             return;
         }
 
         int ageValue;
         try {
             ageValue = Integer.parseInt(ageStr);
-            if (ageValue < 18 || ageValue > 120) {
-                showAlert("Error de Formato", "La edad debe ser un número entre 18 y 120.");
+            if (ageValue <= 0) {
+                showAlert("Error de Validación", "La edad debe ser un número positivo.");
                 return;
             }
         } catch (NumberFormatException e) {
-            showAlert("Error de Formato", "El campo Edad debe ser un número entero válido.");
+            showAlert("Error de Validación", "La edad debe ser un número entero válido.");
             return;
         }
 
-        if (!id.matches("\\d+")) {
-            showAlert("Error de Formato", "El campo Documento (ID) solo debe contener números.");
-            return;
-        }
-
-        String emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$";
-        if (!mail.matches(emailRegex)) {
-            showAlert("Error de Formato", "Por favor, ingrese un formato de correo electrónico válido.");
-            return;
-        }
-
-        if (!phone.matches("\\d+")) {
-            showAlert("Error de Formato", "El campo Teléfono solo debe contener números.");
-            return;
-        }
 
         Client newClient = new Client(name, ageValue, id, mail, phone);
 

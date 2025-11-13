@@ -44,6 +44,11 @@ public class ViewClientsControler implements Initializable {
     private static ObservableList<Client> clientListStatic = FXCollections.observableArrayList();
     private ObservableList<Client> clientList = clientListStatic;
 
+
+    public static ObservableList<Client> getClientList() {
+        return clientListStatic;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (clientListStatic.isEmpty()) {
@@ -55,6 +60,7 @@ public class ViewClientsControler implements Initializable {
         ageColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
         mailColumn.setCellValueFactory(new PropertyValueFactory<>("mail"));
         phoneColumn.setCellValueFactory(new PropertyValueFactory<>("phone"));
+
 
         accountColumn.setCellValueFactory(cellData -> {
             Client client = cellData.getValue();
@@ -101,6 +107,7 @@ public class ViewClientsControler implements Initializable {
             stage.setWidth(800);
             stage.setHeight(600);
             stage.show();
+
 
         } catch (IOException e) {
             e.printStackTrace();

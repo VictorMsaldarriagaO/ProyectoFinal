@@ -20,7 +20,7 @@ public class MenuController {
     private void showEntrar(ActionEvent event) {
         try {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/Login-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/Selection-View.fxml"));
 
             Parent root = loader.load();
 

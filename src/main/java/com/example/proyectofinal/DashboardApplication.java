@@ -14,11 +14,10 @@ public class DashboardApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(
                 DashboardApplication.class.getResource("Main-view.fxml") );
 
-                Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
 
-                stage.setTitle("Bienvenido al Banco");
-                stage.setScene(scene);
-                stage.show();
+        stage.setTitle("Bienvenido al Banco");
+        stage.setScene(scene);
+        stage.show();
     }
-
 }

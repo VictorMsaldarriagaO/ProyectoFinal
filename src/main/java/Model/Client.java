@@ -47,6 +47,6 @@ public class Client {
                 ", Edad='" + age + '\'' + ", Correo='" + mail + '\'' +
                 ", Telefono='" + phone + '\'' +
                 (account != null ? ", Cuenta='" + account.getnumAccount() + "'" : "") + '}';
-   }
+    }
 
 }

@@ -33,9 +33,19 @@
             <font>
                 <Font size="14.0" />
             </font></Button>
-        <Button onAction="#onOpenATMButtonClick" prefWidth="250.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-cursor: hand; -fx-background-radius: 5;" text="Gestión Bancaria">
+        <Button onAction="#onViewATMButtonClick" prefWidth="250.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-cursor: hand; -fx-background-radius: 5;" text="Manejo del ATM">
             <font>
                 <Font size="14.0" />
             </font></Button>
+
+        <Button onAction="#onCerrarSesion" prefWidth="250.0" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-cursor: hand; -fx-background-radius: 5;" text="Cerrar Sesión">
+            <font>
+                <Font size="14.0" />
+            </font>
+            <VBox.margin>
+                <Insets top="30.0" />
+            </VBox.margin>
+        </Button>
+        <Label fx:id="messageLabel" />
     </VBox>
 </VBox>

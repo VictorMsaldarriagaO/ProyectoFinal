@@ -18,6 +18,6 @@
             </font>
         </Label>
         <Label text="Últimas transacciones de su cuenta:" style="-fx-text-fill: #7f8c8d;" />
-        <ListView fx:id="listViewMovimientos" VBox.vgrow="ALWAYS" />
+        <ListView fx:id="listViewMovimientos" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #bdc3c7; -fx-border-radius: 5;" VBox.vgrow="ALWAYS" />
     </VBox>
 </AnchorPane>

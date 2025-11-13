@@ -21,7 +21,7 @@ public class Loan {
         }
     }
 
-    public double getLoan(){
+    public double getLoan() {
         return  this.loan;
     }
 
@@ -29,5 +29,4 @@ public class Loan {
     public String toString() {
         return this.numLoan + " " + account.getClient().getName() + " " + this.loan;
     }
-
 }

@@ -34,12 +34,8 @@
                     <TableColumn fx:id="phoneColumn" prefWidth="153.59994506835938" text="Teléfono" />
                     <TableColumn fx:id="accountColumn" prefWidth="134.4000244140625" text="N° Cuenta" />
                 </columns>
-                <columnResizePolicy>
-                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                </columnResizePolicy>
             </TableView>
-
-            <Button onAction="#onGoBackButtonClick" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-cursor: hand; -fx-background-radius: 5;" text="Regresar al Dashboard" />
+            <Button onAction="#onGoBackButtonClick" text="Regresar al Dashboard" style="-fx-background-color:#e74c3c; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-cursor: hand; -fx-background-radius: 5;"/>
         </VBox>
     </VBox>
 </AnchorPane>

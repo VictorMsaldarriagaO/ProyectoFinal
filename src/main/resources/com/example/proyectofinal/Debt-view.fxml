@@ -16,8 +16,6 @@
                 <Font size="24.0" />
             </font>
         </Label>
-        <Label fx:id="lblTotalDeuda" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #e74c3c;" text="Deuda Total: $5,000.00" />
-        <Label text="Su deuda principal se deriva de un préstamo activo." />
-        <Label text="Para detalles o realizar pagos, diríjase a la sección de Préstamos." style="-fx-font-weight: bold; -fx-text-fill: #7f8c8d;" />
+        <Label fx:id="lblTotalDeuda" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #e74c3c;" text="Deuda Total: $3.000.000 COP" />
     </VBox>
 </AnchorPane>
